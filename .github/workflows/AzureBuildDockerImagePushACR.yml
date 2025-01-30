@@ -15,8 +15,8 @@ jobs:
     - uses: azure/docker-login@v1
       with:
         login-server: pythoncontainer1.azurecr.io
-        username: ${{ secrets.haikAyesha6304 }}
-        password: ${{secrets.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}}
+        username: ${{ secrets.azure }}
+        password: ${{secrets.azure}}
     - run: |
         docker build . -t pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}
         docker push pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}
