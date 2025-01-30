@@ -16,7 +16,7 @@ jobs:
       with:
         login-server: pythoncontainer1.azurecr.io
         username: ${{ secrets.pythoncontainer1 }}
-        password: ${{ secrets.RSxlmkrlcxdJg7hBPd716ydB/hL6ySMmtZ7bnghC5Y+ACRCznYsC }}
+        password: ${{ secrets.'RSxlmkrlcxdJg7hBPd716ydB/hL6ySMmtZ7bnghC5Y+ACRCznYsC'}}
     - run: |
         docker build . -t pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}
         docker push pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}
