@@ -14,9 +14,9 @@ jobs:
     - uses: actions/checkout@v2
     - uses: azure/docker-login@v1
       with:
-        login-server: pythoncontainer1.azurecr.io
+        login-server: azdev123.azurecr.io
         username: ${{ secrets.azure }}
         password: ${{secrets.azure}}
     - run: |
-        docker build . -t pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}
-        docker push pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}
+        docker build . -t azdev123.azurecr.io/sampleweb:${{ github.sha }}
+        docker push azdev123.azurecr.io/sampleweb:${{ github.sha }}
