@@ -22,23 +22,23 @@ jobs:
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        client-id: ${{ secrets.48a62e12-80cb-4fc0-b4db-211f88adb14f }}
+        tenant-id: ${{ secrets.e2b2a256-ebd3-4a3f-916e-37d2e85b9884}}
+        subscription-id: ${{ secrets.4cdc700a-5678-4ac0-9653-3bf078a965d5 }}
     
     - uses: azure/docker-login@v1
       with:
-        login-server: pythoncontainer1.azurecr.io
-        username: ${{ secrets.REGISTRY_USERNAME }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
+        login-server: .azurecr.io
+        username: ${{ secrets.azure }}
+        password: ${{ secrets.azure }}
     - run: |
-        docker build . -t pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}
-        docker push pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}     
+        docker build . -t dotnetacr123.azurecr.io/dotnet:${{ github.sha }}
+        docker push dotnetacr123.azurecr.io/dotnet:${{ github.sha }}     
       
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'azdonet'
-        images: 'pythoncontainer1.azurecr.io/sampleweb:${{ github.sha }}'
+        app-name: 'azdotnet-1'
+        images: 'dotnetacr123.azurecr.io/dotnet:${{ github.sha }}'
     
     - name: Azure logout
       run: |
