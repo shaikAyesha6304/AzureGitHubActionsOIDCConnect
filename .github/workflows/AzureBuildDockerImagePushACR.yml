@@ -18,5 +18,5 @@ jobs:
         username: ${{ secrets.azure }}
         password: ${{secrets.azure}}
     - run: |
-        docker build . -t dotnetacr123.azurecr.io/sampleweb:${{ github.sha }}
-        docker push dotnetacr123.azurecr.io/sampleweb:${{ github.sha }}
+        docker build . -t dotnetacr123.azurecr.io/dotnet:${{ github.sha }}
+        docker push dotnetacr123.azurecr.io/dotnet:${{ github.sha }}
