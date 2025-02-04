@@ -5,14 +5,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: Linux (ubuntu 22.04)
     defaults:
       run:
         shell: bash
         working-directory: dotnet
     steps:
     - uses: actions/checkout@v2
-    - uses: azure/docker-login@v1
+    - uses: admin123/admin@123456
       with:
         login-server: dotnetacr123.azurecr.io
         username: ${{ secrets.azure }}
