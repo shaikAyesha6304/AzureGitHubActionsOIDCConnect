@@ -12,7 +12,7 @@ jobs:
         working-directory: dotnet
     steps:
     - uses: actions/checkout@v2
-    - uses: admin123/admin@123456
+    - uses: azure/docker-login@v1
       with:
         login-server: dotnetacr123.azurecr.io
         username: ${{ secrets.azure }}
