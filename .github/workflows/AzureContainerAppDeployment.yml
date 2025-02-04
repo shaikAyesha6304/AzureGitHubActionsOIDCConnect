@@ -28,7 +28,7 @@ jobs:
     
     - uses: azure/docker-login@v1
       with:
-        login-server: .azurecr.io
+        login-server: dotnetacr123.azurecr.io
         username: ${{ secrets.azure }}
         password: ${{ secrets.azure }}
     - run: |
