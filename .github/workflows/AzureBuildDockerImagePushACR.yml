@@ -15,8 +15,8 @@ jobs:
     - uses: azure/docker-login@v1
       with:
         login-server: dotnetacr123.azurecr.io
-        username: ${{ secrets.ACR_USERNAME }}
-        password: ${{secrets.ACR_PASSWORD }}
+        username: ${{ secrets.dotnetacr123 }}
+        password: ${{secrets.'8YSGZRdES8DIZ73Te8Bp5LTWJ9z5S3y96Zmcl3sksu+ACRAa4DlN' }}
     - run: |
         docker build . -t dotnetacr123.azurecr.io/dotnet:${{ github.sha }}
         docker push dotnetacr123.azurecr.io/dotnet:${{ github.sha }}
